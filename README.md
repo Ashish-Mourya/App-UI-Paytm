@@ -1,50 +1,125 @@
-# Welcome to your Expo app 👋
+# PayNow App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native payment application built with Expo and TypeScript.
 
-## Get started
+## Prerequisites
 
-1. Install dependencies
+Before you begin, ensure you have the following installed:
+- Node.js (version 14 or higher)
+- npm or yarn package manager
+- Expo CLI (will be installed with dependencies)
 
-   ```bash
-   npm install
-   ```
+## Installation
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+1. Clone the repository
 
 ```bash
-npm run reset-project
+git clone https://github.com/Ashish-Mourya/App-UI-Paytm.git
+cd App-UI-Paytm/paynow
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Running the Application
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Development Mode
 
-## Join the community
+Start the development server:
 
-Join our community of developers creating universal apps.
+```bash
+npm start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This will open the Expo Developer Tools in your browser. From there, you can:
+- Press 'w' to open in web browser
+- Press 'a' to open in Android emulator
+- Press 'i' to open in iOS simulator
+- Scan QR code with Expo Go app on your mobile device
+
+### Platform-Specific Commands
+
+Run on Android:
+```bash
+npm run android
+```
+
+Run on iOS:
+```bash
+npm run ios
+```
+
+Run on Web:
+```bash
+npm run web
+```
+
+## Project Structure
+
+```
+paynow/
+├── app/                    # Main application screens
+│   ├── (tabs)/            # Tab-based navigation screens
+│   │   ├── index.tsx      # Home screen
+│   │   ├── offer.tsx      # Offers screen
+│   │   ├── payment.tsx    # Payment screen
+│   │   └── profile.tsx    # Profile screen
+│   └── _layout.tsx        # Root layout configuration
+├── components/            # Reusable components
+├── page-components/       # Screen-specific components
+├── constants/            # App constants and theme
+├── hooks/               # Custom React hooks
+└── assets/             # Images and static files
+```
+
+## Features
+
+- Tab-based navigation
+- Payment functionality
+- Offers and deals
+- User profile management
+- Responsive design for multiple platforms
+
+## Technologies Used
+
+- React Native
+- Expo
+- TypeScript
+- Expo Router for navigation
+- React Native Reanimated for animations
+
+## Development
+
+The app uses file-based routing provided by Expo Router. To add new screens:
+1. Create a new file in the `app` directory
+2. The file name becomes the route path
+3. Export a default React component
+
+## Building for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+For platform-specific builds, refer to the Expo documentation:
+https://docs.expo.dev/build/introduction/
+
+## Troubleshooting
+
+If you encounter issues:
+1. Clear cache: `npm start -- --clear`
+2. Reinstall dependencies: `rm -rf node_modules && npm install`
+3. Reset Expo cache: `npx expo start -c`
+
+## License
+
+This project is licensed under the MIT License.
+
+## Repository
+
+https://github.com/Ashish-Mourya/App-UI-Paytm
