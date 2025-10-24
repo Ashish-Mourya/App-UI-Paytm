@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-
 const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
@@ -43,12 +42,10 @@ const rl = readline.createInterface({
 const moveDirectories = async (userInput) => {
   try {
     if (userInput === "y") {
-      
       await fs.promises.mkdir(exampleDirPath, { recursive: true });
       console.log(`📁 /${exampleDir} directory created.`);
     }
 
-    
     for (const dir of oldDirs) {
       const oldDirPath = path.join(root, dir);
       if (fs.existsSync(oldDirPath)) {
@@ -65,17 +62,14 @@ const moveDirectories = async (userInput) => {
       }
     }
 
-    
     const newAppDirPath = path.join(root, newAppDir);
     await fs.promises.mkdir(newAppDirPath, { recursive: true });
     console.log("\n📁 New /app directory created.");
 
-    
     const indexPath = path.join(newAppDirPath, "index.tsx");
     await fs.promises.writeFile(indexPath, indexContent);
     console.log("📄 app/index.tsx created.");
 
-    
     const layoutPath = path.join(newAppDirPath, "_layout.tsx");
     await fs.promises.writeFile(layoutPath, layoutContent);
     console.log("📄 app/_layout.tsx created.");
@@ -105,4 +99,3 @@ rl.question(
     }
   }
 );
-
